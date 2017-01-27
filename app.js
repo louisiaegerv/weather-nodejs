@@ -2,7 +2,11 @@ let zipcodes = process.argv.slice(2);
 let https = require('https');
 let http = require('http');
 let getCoords = (zip) => {
-    let api = "Dqfcw9y4aAw0fEC7Q7F5v1eCMu851ZZFpeSVnqZy0vzgabn0j26P3krPOAVQzUvY";
+    
+    //--- ENTER YOUR ZIPCODEAPI.COM API KEY HERE! ---//
+    //--- You can get an API key here if you don't have one
+    //--- https://www.zipcodeapi.com/API
+    let api = "";
     let url = "https://www.zipcodeapi.com/rest/" + api + "/info.json/" + zip + "/degrees";
     let request = https.get(url, function (response) {
         let body = "";
@@ -19,7 +23,11 @@ let getCoords = (zip) => {
     });
 };
 let getTemp = (city, latitude, longitude) => {
-    let api = "a2375127e4964d414de339b5f5d0edff";
+    
+    //--- ENTER YOUR OPENWEATHERMAP API KEY HERE!
+    //--- You can get an API key here if you don't have one
+    //--- http://openweathermap.org/appid
+    let api = "";
     let url = "http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&APPID=" + api;
     let request = http.get(url, (response) => {
         let body = "";
