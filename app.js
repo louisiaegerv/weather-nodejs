@@ -50,7 +50,7 @@ let kelvinToFahrenheit = (kelvinTemp) => {
     let f = Math.round(kelvinTemp * (9 / 5) - 459.67);
     return f;
 };
-let makeRequest
+
 zipcodes.forEach(function (zip) {
     getCoords(zip);
 });
